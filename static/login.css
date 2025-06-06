@@ -1,0 +1,258 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Cyberpunk Animated Background */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/static/images/background.webp') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #0a001f;
+    animation: backgroundPulse 6s infinite alternate ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Pulsing Effect */
+@keyframes backgroundPulse {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.3) saturate(1.2); }
+}
+
+/* Floating Glowing Particles */
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/g3.webp');
+    opacity: 0.4; /* Increased for better visibility */
+    z-index: -1;
+    filter: brightness(1.8) saturate(1.5); /* Boost glow effect */
+    animation: floatParticles 15s linear infinite;
+}
+
+/* Extra Ambient Neon Glow Effect */
+body::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.3) 10%, rgba(0, 0, 0, 0) 80%);
+    z-index: -2;
+}
+
+/* Floating Animation for Particles */
+@keyframes floatParticles {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+/* Floating Animation for UI Elements */
+@keyframes floatBox {
+    0% { transform: translateY(-8px); }
+    50% { transform: translateY(8px); }
+    100% { transform: translateY(-8px); }
+}
+
+/* Cyberpunk Glitch Effect */
+@keyframes glitch {
+    0% { transform: skew(0deg); }
+    25% { transform: skew(2deg); }
+    50% { transform: skew(-2deg); }
+    75% { transform: skew(1deg); }
+    100% { transform: skew(0deg); }
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Signup Box with Floating Animation */
+.signup-box {
+    background: rgba(10, 0, 31, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.9);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    animation: fadeInZoom 1.5s ease-in-out, floatBox 3s infinite ease-in-out;
+}
+
+/* Fade-In and Zoom Animation */
+@keyframes fadeInZoom {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Neon Title */
+.signup-box h2 {
+    color: #ffffff;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #ff00ff, 0 0 25px #ff1493;
+    margin-bottom: 20px;
+    animation: glitch 1.5s infinite;
+}
+
+/* Input Group */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Input Field with 3D Neon Effect */
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    border: 2px solid rgba(255, 20, 147, 0.8);
+    border-radius: 6px;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.input-group input:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 30px #ff00ff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+/* Floating Label */
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: 6px;
+    font-size: 14px;
+    color: #ff00ff;
+}
+
+/* Password Toggle Button */
+.password-toggle {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+}
+
+.password-toggle:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 1);
+}
+
+/* Futuristic Button with Glitch Effect */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #ff00ff, #ff1493);
+    border: none;
+    border-radius: 6px;
+    color: rgb(253, 252, 252);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
+}
+.btn:hover {
+    background: linear-gradient(90deg, #ff00ff, #ff69b4);
+    box-shadow: 0 0 35px rgba(255, 0, 255, 1);
+    transform: scale(1.1);
+    animation: glitch 0.5s infinite;
+}
+
+/* Glowing Links */
+.account-link, .forgot-password {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+.account-link a, .forgot-password a {
+    color: #00eaff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.account-link a:hover, .forgot-password a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .signup-box {
+        padding: 30px;
+        width: 90%;
+    }
+    
+    .signup-box h2 {
+        font-size: 24px;
+    }
+
+    .input-group input {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+/* Enable Scrolling but Hide Scrollbar */
+body {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/* Hide Scrollbar */
+body::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Edge and IE */
+}

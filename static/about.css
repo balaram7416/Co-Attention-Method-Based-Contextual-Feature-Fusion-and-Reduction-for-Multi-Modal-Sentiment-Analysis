@@ -1,0 +1,305 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Body Styling with Background Animation */
+body {
+    background: linear-gradient(-45deg, #007bff, #0056b3, #003d80, #002855);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s infinite ease-in-out;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Smooth Scrollbar */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 10px;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeInUp 1.2s ease-in-out;
+    transform-origin: center;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container Floating Effect */
+.container:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Headings */
+h2 {
+    color: #007bff;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    animation: slideInDown 0.8s ease-in-out;
+    position: relative;
+}
+
+h4 {
+    color: #0056b3;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 20px;
+    text-align: left;
+    animation: slideInLeft 0.8s ease-in-out;
+}
+
+/* Paragraphs */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeInUp 0.9s ease-in-out forwards;
+}
+
+/* Highlighted Text */
+.highlight {
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Lists */
+ul {
+    text-align: left;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 25px;
+    list-style: none;
+    opacity: 0;
+    animation: fadeInRight 0.9s ease-in-out forwards;
+}
+
+/* List Bullet Icon */
+ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ripple Effect */
+.btn::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.btn:hover::after {
+    left: 0;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    box-shadow: 0px 5px 15px rgba(0, 91, 187, 0.3);
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    box-shadow: 0px 8px 20px rgba(0, 91, 187, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Secondary Outline Button */
+.btn-outline-secondary {
+    background: white;
+    color: #007bff;
+    border: 2px solid #007bff;
+    box-shadow: none;
+}
+
+.btn-outline-secondary:hover {
+    background: #007bff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 20px rgba(0, 91, 187, 0.5);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #666;
+    margin-top: 50px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}

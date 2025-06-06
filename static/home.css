@@ -1,0 +1,321 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Body Styling */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Hide scrollbar while allowing scroll */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Edge */
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px 10%;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    animation: slideDown 0.6s ease-in-out;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease-in-out, transform 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #007bff;
+    transform: scale(1.08);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    font-size: 17px;
+    color: #fff;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    margin-right: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Navigation Button Hover Animation */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Auth Buttons */
+.nav-item .btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Login & Signup Buttons */
+.btn-outline-light {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline-light:hover {
+    background: white;
+    color: black;
+}
+
+.btn-success {
+    background: #007bff;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #0056b3;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
+    background: linear-gradient(135deg, #eef2f3, #d9e7ff);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 45px;
+    font-weight: 600;
+    color: #222;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero h1 .text-highlight {
+    color: #007bff;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #555;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.feature {
+    text-align: center;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.feature i {
+    color: #007bff;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Get Started Button */
+.btn.start {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 32px;
+    background: #007bff;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+    animation: bounceIn 1.2s ease-in-out;
+}
+
+.btn.start:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Interactive Card Animation */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+    font-size: 14px;
+    margin-top: 50px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Social Media Icons */
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    color: white;
+    font-size: 18px;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .social-icons a:hover {
+    color: #007bff;
+}
+
+/* Loading Animation */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Call-to-Action Pulse */
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Shake Effect */
+.shake:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 50px 5%;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}
